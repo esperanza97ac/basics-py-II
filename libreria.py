@@ -13,10 +13,6 @@ y que retorne un diccionario con el título y el autor del libro.
 def agregar_libro(titulo, autor):
     return {"titulo": titulo, "autor": autor}
 
-libro1 = agregar_libro("Cien años de soledad", "Gabriel García Márquez")
-libro2 = agregar_libro("1984", "George Orwell")
-libro3 = agregar_libro("El principito", "Antoine de Saint-Exupéry")
-print(libro1, libro2, libro3)
 
 """
 --- Ejercicio 2: Función para Listar Libros ---
@@ -26,9 +22,6 @@ que retorne una lista con los títulos de los libros.
 
 def listar_libros(libros):
     return [libro["titulo"] for libro in libros]
-
-libros = [libro1, libro2, libro3]
-print(listar_libros(libros))
 
 """
 --- Ejercicio 3: Función para Buscar Libros ---
@@ -41,9 +34,6 @@ def buscar_libro(libros, titulo):
         if libro["titulo"] == titulo:
             return libro
     return None
-
-print(buscar_libro(libros, "1984"))
-print(buscar_libro(libros, "No existe"))
 
 
 """
@@ -59,11 +49,6 @@ def quitar_libro(libros, titulo):
             return
     print(f"Error: el libro '{titulo}' no se encontró.")
 
-quitar_libro(libros, "1984")
-print(libros)
-quitar_libro(libros, "No existe")
-
-
 
 """
 --- Ejercicio 5: Función que Retorna un Diccionario ---
@@ -78,7 +63,6 @@ def crear_inventario(libros):
         inventario[autor] = inventario.get(autor, 0) + 1
     return inventario
 
-print(crear_inventario(libros))
 
 """
 --- Ejercicio 6: Función que Retorna una Lista ---
@@ -89,8 +73,6 @@ que retorne una lista con los títulos de los libros escritos por el autor espec
 def libros_por_autor(libros, autor):
     return [libro["titulo"] for libro in libros if libro["autor"] == autor]
 
-print(libros_por_autor(libros, "Gabriel García Márquez"))
-
 
 """
 --- Ejercicio 7: Función que Retorna un Booleano ---
@@ -100,7 +82,3 @@ que retorne `True` si el libro existe en la lista, y `False` en caso contrario.
 
 def existe_libro(libros, titulo):
     return any(libro["titulo"] == titulo for libro in libros)
-
-print(existe_libro(libros, "El principito"))
-print(existe_libro(libros, "1984"))
-

@@ -1,19 +1,19 @@
-from libreria import agregar_libro, listar_libros, buscar_libro, existe_libro
+from libreria import agregar_libro, listar_libros, libros_por_autor, existe_libro
 
 
 # Añade una colección de libros
-libros = []
-libros.append(agregar_libro("Cien años de soledad", "Gabriel García Márquez"))
-libros.append(agregar_libro("1984", "George Orwell"))
-libros.append(agregar_libro("El principito", "Antoine de Saint-Exupéry"))
+libros = [
+    agregar_libro("Cien años de soledad", "Gabriel García Márquez"),
+    agregar_libro("1984", "George Orwell"),
+    agregar_libro("El principito", "Antoine de Saint-Exupéry"),
+]
 
 # Muestra la colección de libros creada
-print(listar_libros(libros))
+print("Colección de libros:", listar_libros(libros))
 
 # Busca un libro por el autor
 autor = "George Orwell"
-resultado = [libro for libro in libros if libro["autor"] == autor]
-print(resultado)
+print(f"Libros de {autor}:", libros_por_autor(libros, autor))
 
 # Verifica si un libro está disponible
 titulo = "1984"
